@@ -32,7 +32,9 @@ namespace MMexJava {
                     }
                 }
             }
-            Console.WriteLine("Finished running thread from: " + start + " to " + (start + end));  
+            Console.WriteLine("Finished running thread from: " + start + " to " + (start + end)); 
+ 
+            //test  
         }
     }
 }
