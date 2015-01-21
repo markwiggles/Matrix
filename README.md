@@ -63,7 +63,7 @@ From <i>Spree</i> docs...
 </ul>
 <h4>Use the Spree Controller Helpers</h4>
 In <i>applicationHelper.rb</i> (or where ever you feel appropriate), 
-add a method <i>is_admin?</i> which can be used in the erb text passed as a parameter in the <i>deface override</i> file.
+add a method <i>is_admin?</i> which can be used as <i>erb</i> text passed as a parameter in the <i>deface override</i> file.  The <i>require_login</i> method can be used as a filter for pages in the main website which will need authorisation i.e. using the devise authentication provided with the Spree Application.
 ```ruby
 include Spree::Core::ControllerHelpers
 
