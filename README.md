@@ -44,6 +44,38 @@ Mount <i>Spree</i> at <i>/shop</i>.  Note the comment from the <i>Spree</i> deve
 # We ask that you don't use the :as option here, as Spree relies on it being the default of "spree"
 mount Spree::Core::Engine, :at => '/shop'
 ```
+<h3>Add link in index file</h3>
+<h3>Using the <i>Deface</i> Library to Customise</h3>
+From <i>Spree</i> docs...
+<blockquote>"Deface is a standalone Rails library that enables you to customize Erb templates without needing to directly edit the underlying view file. Deface allows you to use standard CSS3 style selectors to target any element (including Ruby blocks), and perform an action against all the matching elements"</blockquote>
+<ul>
+<li>change logo</li>
+<li>remove search bar</li>
+<li>add menu items</li>
+</ul>
+<h4>Use the Spree Controller Helpers</h4>
+In <i>applicationHelper.rb</i> (or whereever you feel appropriate) 
+add some methods that can be used in the erb text being included in the menu items.
+```ruby
+include Spree::Core::ControllerHelpers
+
+  def is_admin?
+    if spree_current_user
+      spree_current_user.has_spree_role?('admin')
+    end
+  end
+
+  def require_login
+    if spree_current_user
+      unless spree_current_user.has_spree_role?('admin')
+        redirect_to spree_login_path
+      end
+    else
+      redirect_to spree_login_path
+    end
+  end
+```
+
 
 
 
