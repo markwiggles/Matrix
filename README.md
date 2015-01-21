@@ -44,6 +44,13 @@ Mount <i>Spree</i> at <i>/shop</i>.  Note the comment from the <i>Spree</i> deve
 # We ask that you don't use the :as option here, as Spree relies on it being the default of "spree"
 mount Spree::Core::Engine, :at => '/shop'
 ```
+Add a route which will navigate direct to the product that you want to sell. 
+You will need to get the integer id for product, from the database table.
+```
+  Spree::Core::Engine.routes.draw do
+    root :to => 'products#show', as: 'buy_product', :id => 17
+  end
+```
 <h3>Add link in index file</h3>
 <h3>Using the <i>Deface</i> Library to Customise</h3>
 From <i>Spree</i> docs...
@@ -51,6 +58,7 @@ From <i>Spree</i> docs...
 <ul>
 <li>change logo</li>
 <li>remove search bar</li>
+<li>add favicon</li>
 <li>add menu items</li>
 </ul>
 <h4>Use the Spree Controller Helpers</h4>
