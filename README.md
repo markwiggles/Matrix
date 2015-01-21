@@ -13,7 +13,7 @@ Optionally, if you need volume pricing add
 ```ruby
 gem 'spree_volume_pricing', github: 'spree-contrib/spree_volume_pricing'
 ```
-AT this point, check your version of rails, otherwise there may be conflicts.
+At this point, check your version of rails, otherwise there may be conflicts.
 ```ruby
 gem 'rails', '4.1.8'
 ```
@@ -23,8 +23,8 @@ Then run bundle install.
 ```
 rails g spree:install
 ```
-Reload your root webpage and you should now see the Spree frontend site with products.  
-It will be a bit ugly, but nothing some bootstrap css can't fix!
+Reload your root webpage and you should now see the <i>Spree</i> frontend site with products.  
+It will be a bit ugly, but nothing some <i>bootstrap</i> css can't fix!
 <h3>Install Bootstrap</h3>
 ```
 rails g spree_bootstrap_frontend:install
@@ -37,8 +37,8 @@ Change the <i>application.css</i> to file to scss and add the following. This wi
 <h3>Create Your New Product</h3>
 Navigate to the backend using <i>/admin</i> and you be asked to login (use the email you specified in the install eg. spree@example.com, and password).  You will see the admin area where you can go to the products -> +New Product, where you can add a product name, price, image etc.  Then navigate back to home menu.
 
-<h3>Change the Routing</h3>
-Mount <i>Spree</i> at <i>/shop</i>.  Note the comment from the <i>Spree</i> developers.
+<h3>Routing</h3>
+In <i>routes.rb</i> - mount <i>Spree</i> at <i>/shop</i>.  Note the comment from the <i>Spree</i> developers.
 
 ```ruby
 # We ask that you don't use the :as option here, as Spree relies on it being the default of "spree"
@@ -51,7 +51,7 @@ You will need to get the integer id for product, from the database table.
     root :to => 'products#show', as: 'buy_product', :id => 17
   end
 ```
-<h3>Add link in index file</h3>
+The original webpage will now be back as the root and you will now be able to navigate to the <i>Spree</i> site using  <i>/shop</i> or <i>buy_product</i> path.
 <h3>Using the <i>Deface</i> Library to Customise</h3>
 From <i>Spree</i> docs...
 <blockquote>"Deface is a standalone Rails library that enables you to customize Erb templates without needing to directly edit the underlying view file. Deface allows you to use standard CSS3 style selectors to target any element (including Ruby blocks), and perform an action against all the matching elements"</blockquote>
