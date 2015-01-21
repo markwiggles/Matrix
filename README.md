@@ -62,8 +62,8 @@ From <i>Spree</i> docs...
 <li>add menu items</li>
 </ul>
 <h4>Use the Spree Controller Helpers</h4>
-In <i>applicationHelper.rb</i> (or whereever you feel appropriate) 
-add some methods that can be used in the erb text being included in the menu items.
+In <i>applicationHelper.rb</i> (or where ever you feel appropriate), 
+add a method <i>is_admin?</i> which can be used in the erb text passed as a parameter in the <i>deface override</i> file.
 ```ruby
 include Spree::Core::ControllerHelpers
 
