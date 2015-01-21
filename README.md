@@ -1,6 +1,6 @@
 # Adding Spree to existing Rails App
 
-<h3>Gemfile</h3>
+<h3>In Gemfile</h3>
 
 
 Use the stable build, <i>bootstrap</i> for the frontend, and the <i>devise</i> authentication gem.
@@ -34,7 +34,7 @@ Change the <i>application.css</i> to file to scss and add the following. This wi
 @import "spree/frontend/bootstrap_frontend";
 @import "font-awesome";
 ```
-<h3>Login to admin and create a new Product</h3>
+<h3>Create Your New Product</h3>
 Navigate to the backend using <i>/admin</i> and you be asked to login (use the email you specified in the install eg. spree@example.com, and password).  You will see the admin area where you can go to the products -> +New Product, where you can add a product name, price, image etc.  Then navigate back to home menu.
 
 <h3>Change the Routing</h3>
