@@ -40,9 +40,15 @@ It will be a bit ugly, but nothing some <i>bootstrap</i> css can't fix!
 ```
 rails g spree_bootstrap_frontend:install
 ```
-Change the <i>application.css</i> to file to scss and add the following. This will reference the frontend css, as well as allow us to use the <i>font-awesome</i> gem that comes with the <i>Spree</i> package (if we don't already have it).
+Note: you may get a message re additional assets. If so then add assets to the assets.rb file.
 ```ruby
-@import "spree/frontend/bootstrap_frontend";
+# Precompile additional assets.
+# application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
+Rails.application.config.assets.precompile += %w( favicon.ico spree_header.jpg logo/spree_50.png)
+```
+
+Spree uses the <i>font-awesome</i> gem which can also be included to use in the markup. To use this, you will need to change the <i>application.css</i> to file to .scss and add the following. 
+```ruby
 @import "font-awesome";
 ```
 <h3>Create New Product</h3>
