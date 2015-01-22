@@ -117,7 +117,7 @@ include Spree::Core::ControllerHelpers
     end
   end
 ```
-
+<h5><i>Overrides.rb</i></h5>
 Spree will first look in the folder <i>Overrides</i>,  so create files for each of the operations, (convention is to have one file for each, unless the tasks are closely related)
 
 <br>
