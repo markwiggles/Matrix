@@ -83,17 +83,20 @@ From <i>Spree</i> docs...
 
 Using <i>Deface</i>, we will change a few things with as little code as possible.
 <ul>
-<li>Change logo</li>
 <li>Remove search bar</li>
+<li>Change logo</li>
 <li>Add favicon</li>
 <li>Add menu items</li>
-<li>Add payment details (credit card icons)
+<li>Add credit card icons</li>
 </ul>
-<h4>Use the Spree Controller Helpers</h4>
-To help manage the authentication, we add two helper methods (in <i>applicationHelper.rb</i>, or where ever you feel appropriate:
+
+<h5> Spree Controller Helpers</h5>
+To help manage the authentication, we add two helper methods (in <i>applicationHelper.rb</i>, or where ever you feel appropriate. The methods access the module, <i>ContollerHelpers</i>, to get <i>spree_current_user</i>.
+
 <ol>
 <li><i>is_admin?</i> - this can be used as <i>erb</i> text passed as a parameter in the <i>Deface override</i> file.</li> <li><i>require_login</i> - can be used as a before_filter (in controllers) for pages in the main website which will need authorisation i.e. using the devise authentication provided with the Spree Application.</li>
 </ol>
+
 
 ```ruby
 include Spree::Core::ControllerHelpers
@@ -114,3 +117,67 @@ include Spree::Core::ControllerHelpers
     end
   end
 ```
+
+Spree will first look in the folder <i>Overrides</i>,  so create files for each of the operations, (convention is to have one file for each, unless the tasks are closely related)
+
+<h5>Remove Search Bar</h5>
+
+```ruby
+Deface::Override.new({
+                       virtual_path: 'spree/shared/_nav_bar',
+                       name: 'remove_search',
+                       remove: '#search-bar'
+})
+```
+
+<h5>Change Logo</h5>
+
+```ruby
+Deface::Override.new({
+                       virtual_path: 'spree/shared/_header',
+                       name: 'change_logo',
+                       replace: "erb[loud]:contains('logo')",
+                       text: "<%= image_tag 'logo.png' %>"
+})
+```
+
+<h5>Add Links</h5>
+
+```ruby
+website_link = "<li id='home-website-link' data-hook><%= link_to 'Website', '/' %></li>"
+
+# calls the helper method is_admin? to determine if admin user is logged in
+admin_link = "
+<% if is_admin? %>
+<li id='admin-link' data-hook><%= link_to 'Spree Admin', '/shop/admin' %></li>
+<% end %>"
+
+Deface::Override.new({
+                       virtual_path: 'spree/shared/_main_nav_bar',
+                       name: 'add_links',
+                       insert_before: '#home-link',
+                       text: "#{website_link} #{admin_link}"
+})
+```
+
+<h5>Add Credit Card Icons</h5>
+
+```ruby
+cards = "
+<div id='credit-cards' style='margin-top: 10px;' class='pull-right'>
+<p class='text-primary'>We accept:</p>
+  <%= image_tag 'mastercard.png' %>
+  <%= image_tag 'visa.png' %>
+  <%= image_tag 'amex.png' %>
+  <%= image_tag 'paypal.png' %>
+</div>
+"
+
+Deface::Override.new({
+                       :virtual_path: 'spree/products/show',
+                       :name => 'add_credit_cards',
+                       :insert_after => '#cart-form',
+                       :text => cards
+})
+```
+
