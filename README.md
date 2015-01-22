@@ -1,6 +1,8 @@
 # Adding Spree to existing Rails App
 
-<h3>In Gemfile</h3>
+[#Routing]
+
+<h3>In Gemfile</h3> 
 
 
 Use the stable build, <i>bootstrap</i> for the frontend, and the <i>devise</i> authentication gem.
