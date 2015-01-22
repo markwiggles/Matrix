@@ -20,6 +20,7 @@ gem 'rails', '4.1.8'
 Then run bundle install.
 
 <h3>Install Spree</h3>
+Unless, you have used <i>Spree</i> before, it is a good idea to load your first project with the sample data as it will give you the opportunity to explore the setup including taxons, frieght etc. You can pass additional commands to give you the bare bones app as  <i> --sample --seed </i>.  See the Spree Github for more info.  Otherwise, for a complete install...
 ```
 rails g spree:install
 ```
@@ -44,14 +45,14 @@ In <i>routes.rb</i> - mount <i>Spree</i> at <i>/shop</i>.  Note the comment from
 # We ask that you don't use the :as option here, as Spree relies on it being the default of "spree"
 mount Spree::Core::Engine, :at => '/shop'
 ```
-Add a route which will navigate direct to the product that you want to sell. 
-You will need to get the integer id for product, from the database table.
+Next, add a route which will navigate direct to the product that you want to sell. 
+For this you will need to get the integer id for newly created product (here it is 17), from your database table.
 ```
   Spree::Core::Engine.routes.draw do
     root :to => 'products#show', as: 'buy_product', :id => 17
   end
 ```
-The original webpage will now be back as the root and you will now be able to navigate to the <i>Spree</i> site using  <i>/shop</i> or <i>buy_product</i> path.
+The original webpage will now return as the root page, and you will be able to navigate to the <i>Spree</i> site using  <i>/shop</i> or in you code as <i>buy_product</i> path.
 <h3>Using the <i>Deface</i> Library to Customise</h3>
 From <i>Spree</i> docs...
 <blockquote>"Deface is a standalone Rails library that enables you to customize Erb templates without needing to directly edit the underlying view file. Deface allows you to use standard CSS3 style selectors to target any element (including Ruby blocks), and perform an action against all the matching elements"</blockquote>
