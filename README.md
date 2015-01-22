@@ -2,8 +2,14 @@
 
 [Install Spree](#install-spree)
 
-<h3>In Gemfile</h3> 
+[Create New product](#create-new-product)
 
+[Add Routes](#add-routes)
+
+[Customise with Deface](#customise-with-deface)
+
+----
+<h3>Gemfile</h3> 
 
 Use the stable build, <i>bootstrap</i> for the frontend, and the <i>devise</i> authentication gem.
 ```ruby
@@ -37,10 +43,10 @@ Change the <i>application.css</i> to file to scss and add the following. This wi
 @import "spree/frontend/bootstrap_frontend";
 @import "font-awesome";
 ```
-<h3>Create Your New Product</h3>
+<h3>Create New Product</h3>
 Navigate to the backend using <i>/admin</i> and you be asked to login (use the email you specified in the install eg. spree@example.com, and password).  You will see the admin area where you can go to the products -> +New Product, where you can add a product name, price, image etc.  Then navigate back to home menu.
 
-<h3>Routing</h3>
+<h3>Add Routes</h3>
 In <i>routes.rb</i> - mount <i>Spree</i> at <i>/shop</i>.  Note the comment from the <i>Spree</i> developers.
 
 ```ruby
@@ -55,7 +61,8 @@ For this you will need to get the integer id for newly created product (here it 
   end
 ```
 The original webpage will now return as the root page, and you will be able to navigate to the <i>Spree</i> site using  <i>/shop</i> or in you code as <i>buy_product</i> path.
-<h3>Using the <i>Deface</i> Library to Customise</h3>
+
+<h3>Customise with <i>Deface</i></h3>
 From <i>Spree</i> docs...
 <blockquote>"Deface is a standalone Rails library that enables you to customize Erb templates without needing to directly edit the underlying view file. Deface allows you to use standard CSS3 style selectors to target any element (including Ruby blocks), and perform an action against all the matching elements"</blockquote>
 <ul>
