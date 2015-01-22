@@ -1,6 +1,8 @@
-# Adding Spree to existing Rails App
+# Example: add <i>Spree</i> to existing Rails App
 
 [Install Spree](#install-spree)
+
+[Install Bootstrap](#install-bnootstrap)
 
 [Create New product](#create-new-product)
 
@@ -65,15 +67,21 @@ The original webpage will now return as the root page, and you will be able to n
 <h3>Customise with <i>Deface</i></h3>
 From <i>Spree</i> docs...
 <blockquote>"Deface is a standalone Rails library that enables you to customize Erb templates without needing to directly edit the underlying view file. Deface allows you to use standard CSS3 style selectors to target any element (including Ruby blocks), and perform an action against all the matching elements"</blockquote>
+
+We will do the following to the Spree (really easily) 
 <ul>
-<li>change logo</li>
-<li>remove search bar</li>
-<li>add favicon</li>
-<li>add menu items</li>
+<li>Change logo</li>
+<li>Remove search bar</li>
+<li>Add favicon</li>
+<li>Add menu items</li>
+<li>Add payment details (credit card icons)
 </ul>
 <h4>Use the Spree Controller Helpers</h4>
-In <i>applicationHelper.rb</i> (or where ever you feel appropriate), 
-add a method <i>is_admin?</i> which can be used as <i>erb</i> text passed as a parameter in the <i>deface override</i> file.  The <i>require_login</i> method can be used as a filter for pages in the main website which will need authorisation i.e. using the devise authentication provided with the Spree Application.
+To help manage the authentication, we add two helper methods (in <i>applicationHelper.rb</i>, or where ever you feel appropriate:
+<ol>
+<li><i>is_admin?</i> which can be used as <i>erb</i> text passed as a parameter in the <i>deface override</i> file.</li> <li><i>require_login</i> method can be used as a filter for pages in the main website which will need authorisation i.e. using the devise authentication provided with the Spree Application.</li>
+</ol>
+
 ```ruby
 include Spree::Core::ControllerHelpers
 
