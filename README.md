@@ -1,6 +1,6 @@
 # Adding Spree to existing Rails App
 
-[#Routing]
+[Install Spree](#install-spree)
 
 <h3>In Gemfile</h3> 
 
