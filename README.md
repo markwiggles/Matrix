@@ -120,6 +120,7 @@ include Spree::Core::ControllerHelpers
 
 Spree will first look in the folder <i>Overrides</i>,  so create files for each of the operations, (convention is to have one file for each, unless the tasks are closely related)
 
+<br>
 <h5>Remove Search Bar</h5>
 
 ```ruby
@@ -129,7 +130,7 @@ Deface::Override.new({
                        remove: '#search-bar'
 })
 ```
-<hr>
+<br>
 <h5>Change Logo</h5>
 
 ```ruby
@@ -140,7 +141,7 @@ Deface::Override.new({
                        text: "<%= image_tag 'logo.png' %>"
 })
 ```
-<hr>
+<br>
 <h5>Add Links</h5>
 
 ```ruby
@@ -159,7 +160,7 @@ Deface::Override.new({
                        text: "#{website_link} #{admin_link}"
 })
 ```
-<hr>
+<br>
 <h5>Add Credit Card Icons</h5>
 
 ```ruby
