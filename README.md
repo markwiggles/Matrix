@@ -13,7 +13,7 @@
 ----
 <h3>Gemfile</h3> 
 
-Add the <i>Spree</i> stable build, the <i>bootstrap</i> gem for the frontend, as well as the <i>devise</i> authentication gem.
+Add the <i>Spree</i> stable build, the <i>bootstrap</i> gem for the frontend, as well as the <i>Devise</i> authentication gem.
 
 ```ruby
 gem 'spree', github: 'spree/spree', branch: '2-4-stable'
@@ -59,17 +59,17 @@ Spree also uses the <i>font-awesome</i> gem which can be helpful in your markup.
 @import "font-awesome";
 ```
 <h3>Create New Product</h3>
-Navigate to the backend using <i>/admin</i> and you be asked to login (use the email you specified in the install eg. spree@example.com, and password).  You will see the admin area where you can go to the products -> +New Product, where you can add a product name, price, image etc.  Then navigate back to home menu.
+Navigate to the backend using <i>/admin</i> and you be asked to login (use the email you specified in the install eg. spree@example.com, and password).  You will see the admin area where you can navigate to Products -> +New Product, where you can add a product name, price, image etc.
 
 <h3>Add Routes</h3>
-In <i>routes.rb</i> - mount <i>Spree</i> at <i>/shop</i>.  Note the comment from the <i>Spree</i> developers.
+In <i>routes.rb</i> - mount <i>Spree</i> at <i>/shop</i>. 
 
 ```ruby
 # We ask that you don't use the :as option here, as Spree relies on it being the default of "spree"
 mount Spree::Core::Engine, :at => '/shop'
 ```
 Next, add a route which will navigate direct to the product that you want to sell. 
-For this you will need to get the integer id for newly created product (here it is 17), from your database table.
+For this you will need to get the integer id for newly created product (here it is 17), from your database products table.
 ```
   Spree::Core::Engine.routes.draw do
     root :to => 'products#show', as: 'buy_product', :id => 17
@@ -90,7 +90,8 @@ Using <i>Deface</i>, we will change a few things with as little code as possible
 <li>Add credit card icons</li>
 </ul>
 
-<h5> Spree Controller Helpers</h5>
+<br>
+<h5>Spree Controller Helpers</h5>
 To help manage the authentication, we add two helper methods (in <i>applicationHelper.rb</i>, or where ever you feel appropriate. The methods access the module, <i>ContollerHelpers</i>, to get <i>spree_current_user</i>.
 
 <ol>
@@ -117,6 +118,7 @@ include Spree::Core::ControllerHelpers
     end
   end
 ```
+<br>
 <h5><i>Overrides.rb</i></h5>
 Spree will first look in the folder <i>Overrides</i>,  so create files for each of the operations, (convention is to have one file for each, unless the tasks are closely related)
 
