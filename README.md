@@ -2,7 +2,7 @@
 
 [Install Spree](#install-spree)
 
-[Install Bootstrap](#install-bnootstrap)
+[Install Bootstrap](#install-bootstrap)
 
 [Create New product](#create-new-product)
 
@@ -13,7 +13,8 @@
 ----
 <h3>Gemfile</h3> 
 
-Use the stable build, <i>bootstrap</i> for the frontend, and the <i>devise</i> authentication gem.
+Add the <i>Spree</i> stable build, the <i>bootstrap</i> gem for the frontend, as well as the <i>devise</i> authentication gem.
+
 ```ruby
 gem 'spree', github: 'spree/spree', branch: '2-4-stable'
 gem 'spree_bootstrap_frontend', github: '200Creative/spree_bootstrap_frontend'
@@ -24,18 +25,24 @@ Optionally, if you need volume pricing add
 gem 'spree_volume_pricing', github: 'spree-contrib/spree_volume_pricing'
 ```
 At this point, check your version of rails, otherwise there may be conflicts.
+
 ```ruby
 gem 'rails', '4.1.8'
 ```
 Then run bundle install.
 
 <h3>Install Spree</h3>
-Unless, you have used <i>Spree</i> before, it is a good idea to load your first project with the sample data as it will give you the opportunity to explore the setup including taxons, frieght etc. You can pass additional commands to give you the bare bones app as  <i> --sample --seed </i>.  See the Spree Github for more info.  Otherwise, for a complete install...
+
+Unless, you have used <i>Spree</i> before, it is a good idea to load your first project with the sample data as it will give you the opportunity to explore the setup including configuration, taxons, freight etc. You can pass additional commands to give you the bare bones app as  <i> --sample --seed </i>.  See the Spree Github for more info.  Otherwise, for a complete install...
+
 ```
 rails g spree:install
+
 ```
+
 Reload your root webpage and you should now see the <i>Spree</i> frontend site with products.  
 It will be a bit ugly, but nothing some <i>bootstrap</i> css can't fix!
+
 <h3>Install Bootstrap</h3>
 ```
 rails g spree_bootstrap_frontend:install
@@ -74,7 +81,7 @@ The original webpage will now return as the root page, and you will be able to n
 From <i>Spree</i> docs...
 <blockquote>"Deface is a standalone Rails library that enables you to customize Erb templates without needing to directly edit the underlying view file. Deface allows you to use standard CSS3 style selectors to target any element (including Ruby blocks), and perform an action against all the matching elements"</blockquote>
 
-We will do the following to the Spree (really easily) 
+Using <i>Deface</i>, we will change a few things with as little code as possible.
 <ul>
 <li>Change logo</li>
 <li>Remove search bar</li>
@@ -107,9 +114,3 @@ include Spree::Core::ControllerHelpers
     end
   end
 ```
-
-
-
-
-
-
