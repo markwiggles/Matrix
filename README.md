@@ -4,7 +4,7 @@
 
 [Install Bootstrap](#install-bootstrap)
 
-[Create New product](#create-new-product)
+[Create New Product](#create-new-product)
 
 [Add Routes](#add-routes)
 
@@ -129,7 +129,7 @@ Deface::Override.new({
                        remove: '#search-bar'
 })
 ```
-
+<hr>
 <h5>Change Logo</h5>
 
 ```ruby
@@ -140,7 +140,7 @@ Deface::Override.new({
                        text: "<%= image_tag 'logo.png' %>"
 })
 ```
-
+<hr>
 <h5>Add Links</h5>
 
 ```ruby
@@ -159,7 +159,7 @@ Deface::Override.new({
                        text: "#{website_link} #{admin_link}"
 })
 ```
-
+<hr>
 <h5>Add Credit Card Icons</h5>
 
 ```ruby
