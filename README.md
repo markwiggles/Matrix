@@ -40,14 +40,14 @@ It will be a bit ugly, but nothing some <i>bootstrap</i> css can't fix!
 ```
 rails g spree_bootstrap_frontend:install
 ```
-Note: you may get a message re additional assets. If so then add assets to the assets.rb file.
+Note: on refresh, you may get an error message re: additional assets. If so then add required files to the <i>assets.rb</i> file as done here, and restart the server.
 ```ruby
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 Rails.application.config.assets.precompile += %w( favicon.ico spree_header.jpg logo/spree_50.png)
 ```
 
-Spree uses the <i>font-awesome</i> gem which can also be included to use in the markup. To use this, you will need to change the <i>application.css</i> to file to .scss and add the following. 
+Spree also uses the <i>font-awesome</i> gem which can be helpful in your markup. To use this, you will need to change the <i>application.css</i> to file to .scss and add the following. 
 ```ruby
 @import "font-awesome";
 ```
