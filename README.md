@@ -79,7 +79,7 @@ end
 ```
 You may like to run `rake:routes` to check that your routes are there.
 
-The original webpage will now return as the root page, and you will be able to navigate to the <i>Spree</i> site using  `/shop` or in your code as `spree.buy_obama_path` - note the namespace call.
+The original webpage will now return as the root page, and you will be able to navigate to the <i>Spree</i> site using  `/shop` or in your code as `spree.buy_obama_path` (note the namespace call), or `spree_path` for the the root path.
 
 <h3>Customise with <i>Deface</i></h3>
 From <i>Spree</i> docs...
