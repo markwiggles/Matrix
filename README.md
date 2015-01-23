@@ -39,7 +39,6 @@ Unless you have used <i>Spree</i> before, it is a good idea to load your first p
 
 ```
 rails g spree:install
-
 ```
 
 Reload your webpage and you should now see the <i>Spree</i> frontend site with products. We will fix the routing later, to get youe  original page back. The <i>Spree</i> page will be a bit ugly, but nothing some <i>bootstrap</i> css can't fix!
