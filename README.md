@@ -41,9 +41,9 @@ Unless you have used <i>Spree</i> before, it is a good idea to load your first p
 rails g spree:install
 ```
 <h5>Problems Installing</h5>
-If you get a message re the installation of <i>Nokogiri</i> (HTML parser) gem, then it may be as simple as updating your Xcode tools, or else this link may help [Installing Nokogiri](http://www.nokogiri.org/tutorials/installing_nokogiri.html).
+If you get a message re the installation of <i>Nokogiri</i> (HTML parser) gem, then it may be as simple as updating your Xcode tools, or else this link may help - [Installing Nokogiri](http://www.nokogiri.org/tutorials/installing_nokogiri.html).
 
-Reload your webpage and you should now see the <i>Spree</i> frontend site with products. We will fix the routing later, to get youe  original page back. The <i>Spree</i> page will be a bit ugly, but nothing some <i>bootstrap</i> css can't fix!
+Reload your webpage and you should now see the <i>Spree</i> frontend site with products. We will fix the routing later, to get your original page back. The <i>Spree</i> page will be a bit ugly, but nothing some <i>bootstrap</i> css can't fix!
 
 <h3>Install Bootstrap Frontend</h3>
 ```
@@ -124,7 +124,7 @@ include Spree::Core::ControllerHelpers
 ```
 <br>
 <h5>Overrides</h5>
-Spree will first look in the<i>Overrides</i> folder, so create files for each of the operations, (convention is to have one file for each, unless the tasks are closely related)
+Spree will first look in the <i>app/overrides</i> folder, so create ruby files for each of the operations, (convention is to have one file for each action, unless the tasks are closely related)
 
 <br>
 <h5>Remove Search Bar</h5>
