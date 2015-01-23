@@ -77,7 +77,9 @@ Spree::Core::Engine.routes.draw do
   # root to: 'products#show', as: 'buy_product', :id => 17
 end
 ```
-The original webpage will now return as the root page, and you will be able to navigate to the <i>Spree</i> site using  <i>/shop</i> or in you code as <i>buy_product</i> path.
+You may like to run `rake:routes` to check that your routes are there.
+
+The original webpage will now return as the root page, and you will be able to navigate to the <i>Spree</i> site using  `/shop` or in your code as `spree.buy_obama_path` - note the namespace call.
 
 <h3>Customise with <i>Deface</i></h3>
 From <i>Spree</i> docs...
