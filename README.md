@@ -71,9 +71,7 @@ In <i>routes.rb</i>...
 ```ruby
 # We ask that you don't use the :as option here, as Spree relies on it being the default of "spree"
 mount Spree::Core::Engine, :at => '/shop'
-```
-Next, 
-```
+
   Spree::Core::Engine.routes.draw do
     root :to => 'products#show', as: 'buy_product', :id => 17
     get :obama, to: 'products#show', as: :buy_obama, :id => 17
