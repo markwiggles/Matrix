@@ -64,17 +64,19 @@ Spree also uses the <i>font-awesome</i> gem which can be helpful in your markup.
 Navigate to the backend using <i>/admin</i> and you be asked to login (use the email you specified in the install eg. spree@example.com, and password).  You will see the admin area where you can navigate to Products -> +New Product, where you can add a product name, price, image etc.
 
 <h3>Add Routes</h3>
-In <i>routes.rb</i> - mount <i>Spree</i> at <i>/shop</i>. 
+In <i>routes.rb</i>...
+* mount <i>Spree</i> at <i>/shop</i>.
+* Add a route which will navigate direct to the product that you want to sell. For this you will need to get the integer id for newly created product (here it is 17), from your database products table.  You can either specify this as the root, or create a path using the id, perhaps adding more paths later for new products.
 
 ```ruby
 # We ask that you don't use the :as option here, as Spree relies on it being the default of "spree"
 mount Spree::Core::Engine, :at => '/shop'
 ```
-Next, add a route which will navigate direct to the product that you want to sell. 
-For this you will need to get the integer id for newly created product (here it is 17), from your database products table.
+Next, 
 ```
   Spree::Core::Engine.routes.draw do
     root :to => 'products#show', as: 'buy_product', :id => 17
+    get :obama, to: 'products#show', as: :buy_obama, :id => 17
   end
 ```
 The original webpage will now return as the root page, and you will be able to navigate to the <i>Spree</i> site using  <i>/shop</i> or in you code as <i>buy_product</i> path.
