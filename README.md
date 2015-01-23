@@ -56,7 +56,7 @@ Note: on refresh, you may get an error message re: additional assets. If so then
 Rails.application.config.assets.precompile += %w( favicon.ico spree_header.jpg logo/spree_50.png)
 ```
 
-Spree also uses the <i>font-awesome</i> gem which can be helpful in your markup. To use this, you will need to change the <i>application.css</i> to file to .scss and add the following. 
+Spree also uses the <i>font-awesome</i> gem which can be helpful in your markup. To use this, you will need to change the `application.css` to file to `application.scss` and add the following. 
 ```ruby
 @import "font-awesome";
 ```
@@ -64,8 +64,8 @@ Spree also uses the <i>font-awesome</i> gem which can be helpful in your markup.
 Navigate to the backend using <i>/admin</i> and you be asked to login (use the email you specified in the install eg. spree@example.com, and password).  You will see the admin area where you can navigate to Products -> +New Product, where you can add a product name, price, image etc.
 
 <h3>Add Routes</h3>
-In <i>routes.rb</i>...
-* mount <i>Spree</i> at <i>/shop</i>.
+In `routes.rb`
+* mount <i>Spree</i> at `/shop`.
 * Add a route which will navigate direct to the product that you want to sell. For this you will need to get the integer id for newly created product (here it is 17), from your database products table.  You can either specify this as the root, or create a path using the id, perhaps adding more paths later for new products.
 
 ```ruby
@@ -98,10 +98,10 @@ Using <i>Deface</i>, we will change a few things with as little code as possible
 
 <br>
 <h5>Spree Controller Helpers</h5>
-To help manage the authentication, we add two helper methods (in <i>applicationHelper.rb</i>, or where ever you feel appropriate. The methods access the module, <i>ContollerHelpers</i>, to get <i>spree_current_user</i>.
+To help manage the authentication, we add two helper methods in `applicationHelper.rb`, or where ever you feel appropriate. The methods access the module, `ContollerHelpers`, to get `spree_current_user`.
 
 <ol>
-<li><i>is_admin?</i> - this can be used as <i>erb</i> text passed as a parameter in the <i>Deface override</i> file.</li> <li><i>require_login</i> - can be used as a before_filter (in controllers) for pages in the main website which will need authorisation i.e. using the devise authentication provided with the Spree Application.</li>
+<li>`is_admin?` - this can be used as <i>erb</i> text passed as a parameter in the <i>Deface override</i> file.</li> <li>`require_login` - can be used as a `before_filter` (in controllers) for pages in the main website which will need authorisation i.e. using the devise authentication provided with the Spree Application.</li>
 </ol>
 
 
