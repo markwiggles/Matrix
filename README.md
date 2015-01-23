@@ -35,15 +35,14 @@ Then run bundle install.
 
 <h3>Install Spree</h3>
 
-Unless, you have used <i>Spree</i> before, it is a good idea to load your first project with the sample data as it will give you the opportunity to explore the setup including configuration, taxons, freight etc. You can pass additional commands to give you the bare bones app as  <i> --sample --seed </i>.  See the Spree Github for more info.  Otherwise, for a complete install...
+Unless you have used <i>Spree</i> before, it is a good idea to load your first project with the sample data as it will give you the opportunity to explore the setup including configuration, taxons, freight etc. If you don't want the sample data,  pass the additional arguments  <i> --sample --seed </i>.  See the Spree Github for more info.
 
 ```
 rails g spree:install
 
 ```
 
-Reload your root webpage and you should now see the <i>Spree</i> frontend site with products.  
-It will be a bit ugly, but nothing some <i>bootstrap</i> css can't fix!
+Reload your webpage and you should now see the <i>Spree</i> frontend site with products. We will fix the routing later, to get youe  original page back. The <i>Spree</i> page will be a bit ugly, but nothing some <i>bootstrap</i> css can't fix!
 
 <h3>Install Bootstrap</h3>
 ```
