@@ -49,7 +49,7 @@ Reload your webpage and you should now see the <i>Spree</i> frontend site with p
 ```
 rails g spree_bootstrap_frontend:install
 ```
-Note: on refresh, you may get an error message re: additional assets. If so then add required files to the <i>assets.rb</i> file as done here, and restart the server.
+Note: on refresh, you may get an error message re: additional assets. If so then add required files to the `assets.rb` file as done here, and restart the server.
 ```ruby
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
