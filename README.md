@@ -74,7 +74,7 @@ mount Spree::Core::Engine, :at => '/shop'
 
 Spree::Core::Engine.routes.draw do
   get :obama, to: 'products#show', as: :buy_obama, :id => 17
-  # root :to => 'products#show', as: 'buy_product', :id => 17
+  # root to: 'products#show', as: 'buy_product', :id => 17
 end
 ```
 The original webpage will now return as the root page, and you will be able to navigate to the <i>Spree</i> site using  <i>/shop</i> or in you code as <i>buy_product</i> path.
