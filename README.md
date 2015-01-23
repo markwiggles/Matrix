@@ -20,6 +20,8 @@ gem 'spree', github: 'spree/spree', branch: '2-4-stable'
 gem 'spree_bootstrap_frontend', github: '200Creative/spree_bootstrap_frontend'
 gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '2-4-stable'
 ```
+If you are adding <i>Spree</i>, where you already use <i>Devise</i> then leave out the <i>spree_auth_devise</i> gem and follow the [Spree Custom Authentication Developer Guide](https://guides.spreecommerce.com/developer/authentication.html) to continue with your pre-existing user model. 
+
 Optionally, if you need volume pricing add
 ```ruby
 gem 'spree_volume_pricing', github: 'spree-contrib/spree_volume_pricing'
