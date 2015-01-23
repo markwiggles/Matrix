@@ -74,7 +74,7 @@ mount Spree::Core::Engine, :at => '/shop'
 
 Spree::Core::Engine.routes.draw do
   get :obama, to: 'products#show', as: :buy_obama, :id => 17
-  # root to: 'products#show', as: 'buy_product', :id => 17
+  root to: 'products#show', as: 'buy_product', :id => 17
 end
 ```
 You may like to run `rake:routes` to check that your routes are there.
