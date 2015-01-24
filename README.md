@@ -1,5 +1,7 @@
 # Example: add <i>Spree</i> to existing Rails App
 
+[Required Gems](#required-gems)
+
 [Install Spree](#install-spree)
 
 [Install Bootstrap](#install-bootstrap-frontend)
@@ -9,11 +11,16 @@
 [Adding Routes](#adding-routes)
 
 [Customising Views](#customising-views)
+*  [Virtual Path](#virtual-path)
+*  [Deface Overrides](#deface-overrides)
+*  [DSL Method](#dsl-method)
 
 [Customising Logic](#customising-logic)
+*  ControllerHelpers
+*  Decorators
 
 ----
-<h3>Gemfile</h3> 
+<h3>Required Gems</h3> 
 
 Add the <i>Spree</i> stable build, the <i>bootstrap</i> gem for the frontend, as well as the <i>Devise</i> authentication gem.
 
