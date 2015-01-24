@@ -8,7 +8,9 @@
 
 [Add Routes](#add-routes)
 
-[Customise with Deface](#customise-with-deface)
+[Customising Views](#customising-views)
+
+[Customising Logic](#customising-logic)
 
 ----
 <h3>Gemfile</h3> 
