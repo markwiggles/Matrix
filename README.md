@@ -170,9 +170,9 @@ Deface::Override.new({
 <h5>Spree Controller Helpers</h5>
 To help manage the authentication, we add two helper methods in `applicationHelper.rb`, or where ever you feel appropriate. The methods access the module, `ContollerHelpers`, to get `spree_current_user`.
 
-<ol>
-<li>`is_admin?` - this can be used as <i>erb</i> text passed as a parameter in the <i>Deface override</i> file.</li> <li>`require_login` - can be used as a `before_filter` (in controllers) for pages in the main website which will need authorisation i.e. using the devise authentication provided with the Spree Application.</li>
-</ol>
+
+* `is_admin?` - this can be used as <i>erb</i> text passed as a parameter in the <i>Deface override</i> file. 
+* `require_login` - can be used as a `before_filter` (in controllers) for pages in the main website which will need authorisation i.e. using the devise authentication provided with the Spree Application.
 
 
 ```ruby
