@@ -81,7 +81,8 @@ You may like to run `rake:routes` to check that your routes are there.
 
 The original webpage will now return as the root page, and you will be able to navigate to the <i>Spree</i> site using  `/shop` or in your code as `spree.buy_obama_path` (note the namespace call), or `spree_path` for the the root path.
 
-<h3>Customise with <i>Deface</i></h3>
+<h3>Customising Views</h3>
+<h4><i>Spree Deface Library</i>
 From <i>Spree</i> docs...
 <blockquote>"Deface is a standalone Rails library that enables you to customize Erb templates without needing to directly edit the underlying view file. Deface allows you to use standard CSS3 style selectors to target any element (including Ruby blocks), and perform an action against all the matching elements"</blockquote>
 
@@ -189,4 +190,7 @@ Deface::Override.new({
                        :text => cards
 })
 ```
+
+<h3>Customising Logic</h3>
+<h5>Decorators</h5>
 
