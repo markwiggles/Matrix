@@ -6,7 +6,7 @@
 
 [Create New Product](#create-new-product)
 
-[Add Routes](#add-routes)
+[Adding Routes](#adding-routes)
 
 [Customising Views](#customising-views)
 
@@ -65,7 +65,7 @@ Spree also uses the <i>font-awesome</i> gem which can be helpful in your markup.
 <h3>Create New Product</h3>
 Navigate to the backend using <i>/admin</i> and you be asked to login (use the email you specified in the install eg. spree@example.com, and password).  You will see the admin area where you can navigate to Products -> +New Product, where you can add a product name, price, image etc.
 
-<h3>Add Routes</h3>
+<h3>Adding Routes</h3>
 In `routes.rb`
 * mount <i>Spree</i> at `/shop`.
 * Add a route which will navigate direct to the product that you want to sell. For this you will need to get the integer id for newly created product (here it is 17), from your database products table.  You can either specify this as the root, or create a path using the id, perhaps adding more paths later for new products.
@@ -84,50 +84,22 @@ You may like to run `rake:routes` to check that your routes are there.
 The original webpage will now return as the root page, and you will be able to navigate to the <i>Spree</i> site using  `/shop` or in your code as `spree.buy_obama_path` (note the namespace call), or `spree_path` for the the root path.
 
 <h3>Customising Views</h3>
-<h4><i>Spree Deface Library</i>
+<h4><i>Spree Deface Library</i></h4>
 From <i>Spree</i> docs...
 <blockquote>"Deface is a standalone Rails library that enables you to customize Erb templates without needing to directly edit the underlying view file. Deface allows you to use standard CSS3 style selectors to target any element (including Ruby blocks), and perform an action against all the matching elements"</blockquote>
 
-See the full documentation in the [Spree Deface Github](https://github.com/spree/deface#implementation).
+See the full documentation in the [Spree Deface Github](https://guides.spreecommerce.com/developer/view.html).
 
-Using <i>Deface</i>, we will change a few things with as little code as possible.
-<ul>
-<li>Remove search bar</li>
-<li>Change logo</li>
-<li>Add favicon</li>
-<li>Add menu items</li>
-<li>Add credit card icons</li>
-</ul>
+Using <i>Deface</i>, we will change parts of the view,  using as little code as possible.
 
-<br>
-<h5>Spree Controller Helpers</h5>
-To help manage the authentication, we add two helper methods in `applicationHelper.rb`, or where ever you feel appropriate. The methods access the module, `ContollerHelpers`, to get `spree_current_user`.
-
-<ol>
-<li>`is_admin?` - this can be used as <i>erb</i> text passed as a parameter in the <i>Deface override</i> file.</li> <li>`require_login` - can be used as a `before_filter` (in controllers) for pages in the main website which will need authorisation i.e. using the devise authentication provided with the Spree Application.</li>
-</ol>
+* Remove search bar
+* Change logo
+* Add favicon
+* Add menu items
+* Add credit card icons
 
 
-```ruby
-include Spree::Core::ControllerHelpers
 
-  def is_admin?
-    if spree_current_user
-      spree_current_user.has_spree_role?('admin')
-    end
-  end
-
-  def require_login
-    if spree_current_user
-      unless spree_current_user.has_spree_role?('admin')
-        redirect_to spree_login_path
-      end
-    else
-      redirect_to spree_login_path
-    end
-  end
-```
-<br>
 <h5>Overrides</h5>
 Spree will first look in the <i>app/overrides</i> folder, so create ruby files for each of the operations, (convention is to have one file for each action, unless the tasks are closely related)
 
@@ -194,5 +166,35 @@ Deface::Override.new({
 ```
 
 <h3>Customising Logic</h3>
+
+<h5>Spree Controller Helpers</h5>
+To help manage the authentication, we add two helper methods in `applicationHelper.rb`, or where ever you feel appropriate. The methods access the module, `ContollerHelpers`, to get `spree_current_user`.
+
+<ol>
+<li>`is_admin?` - this can be used as <i>erb</i> text passed as a parameter in the <i>Deface override</i> file.</li> <li>`require_login` - can be used as a `before_filter` (in controllers) for pages in the main website which will need authorisation i.e. using the devise authentication provided with the Spree Application.</li>
+</ol>
+
+
+```ruby
+include Spree::Core::ControllerHelpers
+
+  def is_admin?
+    if spree_current_user
+      spree_current_user.has_spree_role?('admin')
+    end
+  end
+
+  def require_login
+    if spree_current_user
+      unless spree_current_user.has_spree_role?('admin')
+        redirect_to spree_login_path
+      end
+    else
+      redirect_to spree_login_path
+    end
+  end
+```
+<br>
+
 <h5>Decorators</h5>
 
