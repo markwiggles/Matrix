@@ -16,8 +16,8 @@
 *  [DSL Method](#dsl-method)
 
 [Customising Logic](#customising-logic)
-*  Controller Helpers
-*  Decorators
+*  [Controller Helpers](#controller-helpers)
+*  [Decorators](#decorators)
 
 ----
 <h3>Required Gems</h3> 
