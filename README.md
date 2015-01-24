@@ -108,7 +108,8 @@ Using <i>Deface</i>, we will change parts of the view,  using as little code as 
 
 
 <h5>Overrides</h5>
-Spree will first look in the <i>app/overrides</i> folder, so create ruby files for each of the operations, (convention is to have one file for each action, unless the tasks are closely related)
+* Spree will first look in the <i>app/overrides</i> folder, so create ruby files for each of the operations, (convention is to have one file for each action, unless the tasks are closely related)
+* Replacements/Insertions can accept: text; partial (relative path); template (relative path).
 
 <br>
 <h5>Remove Search Bar</h5>
@@ -172,6 +173,10 @@ Deface::Override.new({
 })
 ```
 
+<h3>DSL Method</h3>
+
+
+
 <h3>Customising Logic</h3>
 
 <h5>Spree Controller Helpers</h5>
@@ -204,4 +209,6 @@ include Spree::Core::ControllerHelpers
 <br>
 
 <h5>Decorators</h5>
+
+
 
