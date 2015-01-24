@@ -107,8 +107,9 @@ Using <i>Deface</i>, we will change parts of the view, namely:
 * Add menu items to the navbar
 * Add credit card icons to the product page
 
-* Spree will first look in the <i>app/overrides</i> folder, so create ruby files for each of the operations, (convention is to have one file for each action, unless the tasks are closely related)
-* Replacements/Insertions can accept: text; partial (relative path); template (relative path).
+
+Spree will first look in the <i>app/overrides</i> folder, so create ruby files for each of the operations, (convention is to have one file for each action, unless the tasks are closely related).<br>
+Replacements/Insertions can accept: text; partial (relative path); template (relative path).
 
 <h5>Virtual Path</h5>
 
