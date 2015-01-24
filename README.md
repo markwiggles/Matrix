@@ -107,9 +107,16 @@ Using <i>Deface</i>, we will change parts of the view,  using as little code as 
 
 
 
-<h5>Overrides</h5>
+<h5>Deface Overrides</h5>
 * Spree will first look in the <i>app/overrides</i> folder, so create ruby files for each of the operations, (convention is to have one file for each action, unless the tasks are closely related)
 * Replacements/Insertions can accept: text; partial (relative path); template (relative path).
+
+<h4>Virtual Path</h4>
+
+You need to ensure that you target the correct file to get the <i>virtual path</i>, and this can be done by either:
+* Searching Spree Github (under the correct version)
+* Run `bundler show spree` and use this in text editor files search (eg Sublime)
+* Rubymine - find in path -> custom -> projects and libraries
 
 <br>
 <h5>Remove Search Bar</h5>
