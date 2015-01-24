@@ -97,24 +97,23 @@ From <i>Spree</i> docs...
 
 See the full documentation in the [Spree Deface Github](https://guides.spreecommerce.com/developer/view.html).
 
-Using <i>Deface</i>, we will change parts of the view,  using as little code as possible.
-
-* Remove search bar
-* Change logo
-* Add favicon
-* Add menu items
-* Add credit card icons
-
-
-
 <h5>Deface Overrides</h5>
+
+Using <i>Deface</i>, we will change parts of the view, namely:
+
+* Remove the search bar
+* Change the logo
+* Add favicon
+* Add menu items to the navbar
+* Add credit card icons to the product page
+
 * Spree will first look in the <i>app/overrides</i> folder, so create ruby files for each of the operations, (convention is to have one file for each action, unless the tasks are closely related)
 * Replacements/Insertions can accept: text; partial (relative path); template (relative path).
 
-<h4>Virtual Path</h4>
+<h5>Virtual Path</h5>
 
 You need to ensure that you target the correct file to get the <i>virtual path</i>, and this can be done by either:
-* Searching Spree Github (under the correct version)
+* Searching the Spree Github (under the correct version)
 * Run `bundler show spree` and use this in text editor files search (eg Sublime)
 * Rubymine - find in path -> custom -> projects and libraries
 
