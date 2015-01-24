@@ -143,12 +143,10 @@ Deface::Override.new({
 <h5>Add Links</h5>
 
 ```ruby
-website_link = "<li id='home-website-link' data-hook><%= link_to 'Website', '/' %></li>"
-
-# calls the helper method is_admin? to determine if admin user is logged in
+website_link = "<li id='home-website-link' data-hook><%= link_to 'Website', main_app.root_path %></li>"
 admin_link = "
 <% if is_admin? %>
-<li id='admin-link' data-hook><%= link_to 'Spree Admin', '/shop/admin' %></li>
+<li id='admin-link' data-hook><%= link_to 'Spree Admin', spree.admin_login_path %></li>
 <% end %>"
 
 Deface::Override.new({
