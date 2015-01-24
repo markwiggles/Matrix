@@ -16,7 +16,7 @@
 *  [DSL Method](#dsl-method)
 
 [Customising Logic](#customising-logic)
-*  ControllerHelpers
+*  Controller Helpers
 *  Decorators
 
 ----
@@ -179,8 +179,8 @@ Deface::Override.new({
 
 <h3>Customising Logic</h3>
 
-<h5>Spree Controller Helpers</h5>
-To help manage the authentication, we add two helper methods in `applicationHelper.rb`, or where ever you feel appropriate. The methods access the module, `ContollerHelpers`, to get `spree_current_user`.
+<h5>Controller Helpers</h5>
+To help manage the authentication, we add two helper methods in `applicationHelper.rb`, or where ever you feel appropriate. The methods access the <i>Spree</i> module, `ContollerHelpers`, to get `spree_current_user`.
 
 
 * `is_admin?` - this can be used as <i>erb</i> text passed as a parameter in the <i>Deface override</i> file. 
