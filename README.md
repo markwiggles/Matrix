@@ -1,5 +1,7 @@
 # Example: add <i>Spree</i> to existing Rails App
 
+[logo]: https://github.com/markwiggles/LockJaw/tree/master/app/assets/images/amex.png "Logo Title Text 2"
+
 <h4>Topics</h4>
 
 [Required Gems](#required-gems)
