@@ -19,6 +19,10 @@
 *  [Controller Helpers](#controller-helpers)
 *  [Decorators](#decorators)
 
+[More](#more)
+* [Spree API](#spree-api)
+* [Spree with Ember](spree-with-ember)
+
 ----
 <h3>Required Gems</h3> 
 
