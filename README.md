@@ -1,5 +1,7 @@
 # Example: add <i>Spree</i> to existing Rails App
 
+<h4>Topics</h4>
+
 [Required Gems](#required-gems)
 
 [Install Spree](#install-spree)
@@ -25,7 +27,7 @@
 
 ----
 <h3>Required Gems</h3>
-[back](#required-gems)
+[back](#topics)
 
 Add the <i>Spree</i> stable build, the <i>bootstrap</i> gem for the frontend, as well as the <i>Devise</i> authentication gem.
 
