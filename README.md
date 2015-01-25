@@ -26,8 +26,8 @@
 * [Spree with Ember](spree-with-ember)
 
 ----
-[^](#topics)
-<h3>Required Gems</h3>
+
+<h3>Required Gems</h3> [^](#topics)
 
 Add the <i>Spree</i> stable build, the <i>bootstrap</i> gem for the frontend, as well as the <i>Devise</i> authentication gem.
 
