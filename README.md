@@ -1,6 +1,6 @@
 # Example: add <i>Spree</i> to existing Rails App
 
-<h4>Topics</h4>
+<h4>Contents</h4>
 
 [Required Gems](#required-gems)
 
